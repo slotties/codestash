@@ -1,7 +1,8 @@
 package math2
 
 func Fibonacci(n int) int64 {
-	return fibonacciMatrix(n)
+	// return fibonacciMatrix(n)
+	return fibonacciIterative(n)
 }
 
 // This is horribly slow.
@@ -30,5 +31,16 @@ func fibonacciIterative(n int) int64 {
 
 // http://kukuruku.co/hub/algorithms/the-nth-fibonacci-number-in-olog-n
 func fibonacciMatrix(n int) int64 {
-	// TODO
+	if n <= 0 {
+		return 0
+	}
+
+	matrix := [][]int64 {
+		[]int64 { 1, 1 },
+		[]int64 { 1, 0 },
+	}
+
+	Matrix2x2Power(matrix, n - 1)
+
+	return matrix[0][0]
 }

@@ -22,8 +22,26 @@ func TestFunctionality(t *testing.T) {
 	assert.Equal(t, 12586269025, Fibonacci(50))
 }
 
-func BenchmarkHello(b *testing.B) {
+func BenchmarkFibonacci7000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Fibonacci(70000)
+	}
+}
+
+func BenchmarkFibonacci5(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Fibonacci(5)
+	}
+}
+
+func BenchmarkFibonacci10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Fibonacci(10)
+	}
+}
+
+func BenchmarkFibonacci50(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Fibonacci(50)
 	}
 }
